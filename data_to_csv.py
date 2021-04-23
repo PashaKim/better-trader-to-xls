@@ -22,7 +22,7 @@ for index, line in enumerate(list_of_lines):
 data_list = list_of_lines[(index_after_remove_text + 1):(index_before_remove_text - 1)]  # [28:225]
 
 # from text line to {"name": "Amber"}
-def str_line_to_dicts(line):
+def str_line_to_dicts(line:str) -> dict:
     return {
         "Name": re.search(r'(\b[A-z]*:)', line).group(),
         "Stack": int(re.findall(r'Stack = (\d*)', line)[0]),
@@ -42,3 +42,7 @@ with open('NEW_item_defaults.csv', 'w') as csvfile:
     writer.writeheader()
     for data in data_dicts_list:
         writer.writerow(data)
+
+print("*"*8)
+print("Cerated NEW_item_defaults.csv")
+print("*"*8)
