@@ -7,6 +7,9 @@ with open('Updated_item_defaults.csv', 'r') as f:
     for row in reader:
         data_list.append(row)
 
+#Remove colons name
+data_list.pop(0)
+
 # From list to str
 def get_str_line(line_list:list) -> str:
     name = line_list[0] if ':' in line_list[0] else f'{line_list[0]}:'
@@ -67,8 +70,7 @@ text_after_data = '''
 ##EssenceMagic: Stack = 1 Price = 100 SellPrice = 100 Tradeable = true IgnoreWaitForDiscovery = false Sellable = true
 ##EssenceRare: Stack = 1 Price = 100 SellPrice = 100 Tradeable = true IgnoreWaitForDiscovery = false Sellable = true
 ##EssenceEpic: Stack = 1 Price = 100 SellPrice = 100 Tradeable = true IgnoreWaitForDiscovery = false Sellable = true
-##EssenceLegendary: Stack = 1 Price = 100 SellPrice = 100 Tradeable = true IgnoreWaitForDiscovery = false Sellable = true
-'''
+##EssenceLegendary: Stack = 1 Price = 100 SellPrice = 100 Tradeable = true IgnoreWaitForDiscovery = false Sellable = true'''
 
 # Create a config file
 with open('CREATED_item_defaults.cfg', 'w') as file:
